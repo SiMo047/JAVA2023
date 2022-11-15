@@ -4,7 +4,11 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Este mensaje Github");
+		short num1 = 8; 
+		int mes = 12 ; 
+		long distancia = 300000;
+		char letra = 'a'; 
+		
 
 	}
 
