@@ -22,9 +22,11 @@ public class Ejercicio5 {
 	   System.out.println(adivina); */
 		
 		
-	/*boolean adivina=(97=='a'==97);
+	/*boolean adivina=(97=='a'==97); No FUNCIONA , por el caracter (97==97)
 	 * System.out.println(adivina);
 	 */
+	
+
 	}
 
 }
