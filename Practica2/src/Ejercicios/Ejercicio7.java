@@ -13,7 +13,7 @@ public class Ejercicio7 {
 		
 		/* No compila por la siguientes razones 
 		 * 
-		 * int n1=50, n2=30 ; Hay las asignaciones se cierran con punto y coma 
+		 * int n1=50, n2=30 ; Las asignaciones se cierran con punto y coma 
 		 * 
 		 * int suma=0; o int suma; La variable dara un resultado entero no un lógico
 		 * 
