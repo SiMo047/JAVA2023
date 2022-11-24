@@ -17,7 +17,7 @@ public class Ejercicio7 {
 		 * 
 		 * int suma=0; o int suma; La variable dara un resultado entero no un lógico
 		 * 
-		 *  
+		 *   
 		 */
 			
 

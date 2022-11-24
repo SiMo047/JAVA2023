@@ -13,7 +13,7 @@ public class Ejercicio1 {
 		}else if(b>mayor) {
 			mayor=b; 
 		}else if (c>mayor) {
-			mayor=c; 
+			
 		}
 		
 		
@@ -29,7 +29,7 @@ public class Ejercicio1 {
 		
 		int m; 
 		
-		m= mayor(13,90,100); 
+		m= mayor(23,90,100); 
 		System.out.println(m);
 	
 
