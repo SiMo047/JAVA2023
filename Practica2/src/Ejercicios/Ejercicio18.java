@@ -14,9 +14,9 @@ public class Ejercicio18 {
 		d =a+b++;
 		e = ++a-b;
 		y=(float)a/b;																			
-		
-		
-		System.out.println(x+" y "+y);
+	
+	
+	System.out.println(x+" y "+y);
 	System.out.println("Al final y vale "+y+" por que a y b cambian (++a , b++)");
 		
 		
