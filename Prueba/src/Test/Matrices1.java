@@ -18,7 +18,9 @@ public class Matrices1 {
 				System.out.println(matriz[i][j]);
 			}
 			
-		}  
+		}
+		
+		System.out.println("hola");
 		
 		
 	}
