@@ -4,18 +4,16 @@ public class Ejercicio1 {
 
 	public static int mayor( int a,int b,int c ) {
 		
-		int mayor=0; 
+		int mayor=a; 
 		
 		
 		
-		if (a>mayor) {
-			mayor=a ; 
-		}else if(b>mayor) {
+		if (mayor<b) {
 			mayor=b; 
-		}else if (c>mayor) {
-			
+			if (mayor<c) {
+				mayor=c ; 
+			}
 		}
-		
 		
 		
 		return mayor;
@@ -29,8 +27,13 @@ public class Ejercicio1 {
 		
 		int m; 
 		
-		m= mayor(23,90,100); 
+		m= mayor(230,90,100); 
 		System.out.println(m);
+		
+		int a=4 ,b=8, c=10 ;
+		
+	
+	
 	
 
 		
