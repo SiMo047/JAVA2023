@@ -9,11 +9,11 @@ public class Ejercicio15 {
 		
 Scanner sc = new Scanner(System.in); 
 
-int num=0 ; 
 
-System.out.println("Escribe numero ");
+
+System.out.println("Introduce numero de filas ");
 		
-num = Integer.parseInt(sc.nextLine()); 
+int num = Integer.parseInt(sc.nextLine()); 
 
 
 for (int i=1; i<=num ; i++) {
