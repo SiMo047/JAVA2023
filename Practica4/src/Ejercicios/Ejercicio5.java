@@ -3,7 +3,7 @@ package Ejercicios;
 import java.util.Scanner;
 
 public class Ejercicio5 {
-	
+	/*funcion para pintar array */
 	public static void pintarvector(int array[]) {
 		
 		for (int i =0 ; i<array.length; i++) {
@@ -49,7 +49,7 @@ public class Ejercicio5 {
 		System.out.println("Estos son los dos array juntos ");
 		
 		for (int i =0 ; i<array3.length; i++) {
-			System.out.print(array3[i]+" ");
+			System.out.print(array3[i]+" ");        
 		}
 	}
 
