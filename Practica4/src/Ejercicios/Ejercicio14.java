@@ -26,29 +26,29 @@ public class Ejercicio14 {
 		
 		int num ; 
 		
+		for (int i =0 ; i<matriz.length;i++) {
+				System.out.println("introduce numero para la fila "+i);
+			for (int j=0 ;j <matriz[0].length;j++) {
+				num = Integer.parseInt(sc.nextLine()); 
+				matriz[i][j]=num ;	
+			}
+		}
+		pintarmatriz(matriz ); 
+		
 		int mayor = matriz[0][0];
 		int menor = matriz[0][0]; 
 		
 		for (int i =0 ; i<matriz.length;i++) {
-			System.out.println("introduce numeros para la fila "+ i );
-			
 			for (int j=0 ;j <matriz[0].length;j++) {
-				num = Integer.parseInt(sc.nextLine()); 
-				matriz[i][j]=num ;
 				if (matriz[i][j]>=mayor) {
 					mayor = matriz[i][j]; 
 				}
-				if ( matriz[i][j]<menor) {
+				if ( matriz[i][j] <= menor) {
 					menor= matriz[i][j]; 
 				}
 			}
-			
-			
-			
-			
-		
 		}
-		pintarmatriz(matriz ); 
+		
 		System.out.println(menor +" "+mayor );
 	}
 }
