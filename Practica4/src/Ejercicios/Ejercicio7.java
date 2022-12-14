@@ -34,16 +34,15 @@ public class Ejercicio7 {
 		System.out.println();
 		System.out.println("indica la posicion en la que quieras introducirlo ");
 		int posicion = Integer.parseInt(sc.nextLine()); 
-		int primero ; 
-		primero = array[0]; 
+	
 		
-		for(int i = posicion-1 ; i <=0;i--) {
-			array[i-1]=array[i];
+	
+		
+		for(int i = array.length-1 ; i>posicion ;i--) {
+			array[i]=array[i-1];
 		}
-		
-		array[9]=primero;
-		array[posicion]= num ; 
-	 pintarvector(array); 
+		array[posicion]=num ; 
+		pintarvector(array);
 	}
 
 }
