@@ -69,18 +69,22 @@ public class Ej3exam {
 		
 	}
 	
-	public static void sumadigoin(int matriz[][]) {
+	public static int sumadigoin(int matriz[][]) {
 		
-	
-		for (int j=matriz[0].length-1 ; j<=0;j++) {
+	int suma=0 ;
+		
+		for(int i = 0 ; i<matriz.length;i++) {
 			 
-			for(int i =0 ; i<matriz.length;i++)	{
-				
-				System.out.print(matriz [j][i]+"|");
+			for (int j =0 ; j<=matriz[i].length;j++) {
+				/*con esta condicion sacamos la diagonal inversa */
+				if (i+j==matriz.length-1) {
+				suma = suma+ matriz[i][j];
+				}
 			}
-			System.out.println(" ");
 		}
-		
+	
+		System.out.println("la suma de la dioganal inversa  es "+suma);
+		return suma;
 		
 	
 	}	
