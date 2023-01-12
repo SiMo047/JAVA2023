@@ -10,6 +10,8 @@ public class Enemigo {
 	private int nivel ; 
 	private int damage ;
 
+	/*propiedad estatica que es comun para todos los objetos */
+	public static int numenemigos=0; 
 	
 	
 	/*contructores */
@@ -21,6 +23,8 @@ public class Enemigo {
 		this.salud = 100;
 		this.nivel = 1;
 		this.damage = damage;
+		/*se suma el 1 cuando se crea un objeto (es como un contador de objetos )*/
+		numenemigos++;
 	} 
 	
 	public Enemigo() {
@@ -87,13 +91,17 @@ public class Enemigo {
 		
 		if (this.salud<=0) {
 			System.out.println("GAME OVER - Has Muerto");
+			/*aqui restamos el enemigo si muere con la propiedad estatica */
+			numenemigos--;
 		}
 	}
 
 	
 	
 	
+	/* to String para mostrar luego los valores en tiempo real */
 	
+	  
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

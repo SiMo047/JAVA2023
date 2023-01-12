@@ -8,6 +8,7 @@ public class testgame {
 
 		Enemigo en2 = new Enemigo("Carla","Goat",100);
 		
+		System.out.println(Enemigo.numenemigos);
 		System.out.println(en1);
 		System.out.println(en2);
 		
@@ -21,10 +22,14 @@ public class testgame {
 			en2.levelup();
 		}
 	
+		/*aqui utlizamos el metodo creado para quitar salud al en1 */
+		en1.recibirdamage(800);
+		
+		
 		System.out.println(en1);
 		System.out.println(en2);
 		
-		
+		System.out.println(Enemigo.numenemigos);
 		
 	}
 
