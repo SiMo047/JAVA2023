@@ -10,7 +10,7 @@ public class jugador {
 	private arma armade ; 
 	private arma armaiz ;
 	
-	/*contructor */
+	/*conStructor */
 	
 	public jugador(String nombre, String clase) {
 		super();
@@ -87,4 +87,29 @@ public class jugador {
 		return builder.toString();
 	} 
 	
+	
+	
+	public void quitarVida(int valor) {
+		this.salud = this.salud - valor;
+		if (this.salud == 0)
+			System.out.println("Muerto " + this.nombre);
+	}
+	
+	public void golpearDerecha(jugador otro) {
+		
+		if (this.armade == null) {
+			otro.quitarVida(10);
+		} else {
+			otro.quitarVida(this.armade.getPotencia());
+		}
+	}
+	
+	public void golpearIzquierda(jugador otro) {
+		
+		if (this.armaiz == null) {
+			otro.quitarVida(10);
+		} else {
+			otro.quitarVida(this.armaiz.getPotencia());
+		}
+	}
 }
