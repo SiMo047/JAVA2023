@@ -6,7 +6,7 @@ public class testAhorcado {
 
 		
 		
-		System.out.println(ahorcado.class);
+		
 	}
 
 }

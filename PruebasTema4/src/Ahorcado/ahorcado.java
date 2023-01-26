@@ -15,7 +15,7 @@ public class ahorcado {
 	
 		this.palabraAdivinar=palabras[indice]; 
 		
-		System.out.println(palabraAdivinar);
+	
 	}
 	
 }
