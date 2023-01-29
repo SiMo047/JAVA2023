@@ -2,36 +2,42 @@ package ejercicio11;
 
 import java.util.Objects;
 
-public class robot {
+public class Robot {
 
 	private int posicionX; 
 	private int posicionY;
 	private boolean hallegado ; 
-	private int pasos ; 
 	private static int contadorPasos ; 
 	private static int contadorRobots=0; 
-	private static int filastab=100; 
-	private static int columtab=100 ;
+	private static int filastab=10; 
+	private static int columtab=10 ;
 	
+	/*CONSTRUCTORES*/
 	
-	
-	public robot(int posicionX, int posicionY) {
+	public Robot(int posicionX, int posicionY) throws Exception{
 		super();
+		
+
+		if (posicionX < 0  || posicionX > Robot.columtab) {
+			throw new Exception(" X fuera de rango");
+		}
+		if (posicionY < 0  || posicionY > Robot.filastab) {
+			throw new Exception(" Y fuera de rango");
+		} 
+		
 		this.posicionX = posicionX;
 		this.posicionY = posicionY;
-	    this.pasos = pasos;
-		
-		this.contadorPasos=this.pasos; 
+		this.hallegado=false;
+		this.contadorPasos=0; 
 		this.contadorRobots++; 
 	}
 	
-	public robot() {
+	public Robot() {
 		super();
 		this.posicionX = 0;
 		this.posicionY = 0;
-	    this.pasos = pasos;
-		
-		this.contadorPasos=this.pasos; 
+	    this.hallegado=false;	
+		this.contadorPasos=0; 
 		this.contadorRobots++; 
 	}
 
@@ -45,7 +51,11 @@ public class robot {
 
 
 
-	public void setPosicionX(int posicionX) {
+	public void setPosicionX(int posicionX) throws Exception  {
+		
+		if (posicionX < 0  || posicionX > Robot.columtab) {
+			throw new Exception(" X fuera de rango");
+		}
 		this.posicionX = posicionX;
 	}
 
@@ -57,15 +67,15 @@ public class robot {
 
 
 
-	public void setPosicionY(int posicionY) {
+	public void setPosicionY(int posicionY) throws Exception {
+		
+		if (posicionY < 0  || posicionY > Robot.filastab) {
+			throw new Exception(" Y fuera de rango");
+		} 
+		
 		this.posicionY = posicionY;
 	}
 
-
-
-	public int getPasos() {
-		return pasos;
-	}
 
 
 
@@ -79,33 +89,44 @@ public class robot {
 		return contadorRobots;
 	}
 	
-	/*metodos*/
+	public boolean hallegado() {
+		return this.hallegado;
+	}
 	
+	
+	/*metodos*/
+
 	public void Arriba() {
-		if( this.posicionY < robot.filastab-1 ) {
+		if( this.posicionY < Robot.filastab ) {
 		this.posicionY++;  
+		this.contadorPasos++;
+	 
 		}
 		
 	}
 	
+	
 	public void Abajo() {
 		if( this.posicionY > 0 ) {
-		this.posicionY--; 
+		this.posicionY--;
+		this.contadorPasos++;
 		}
 	
 	}
 	
 	
 	public void Derrecha() {
-			if( this.posicionX < robot.columtab -1) {
+			if( this.posicionX < Robot.columtab ) {
 			this.posicionX++; 
+			this.contadorPasos++;
 			}	
 			
 	}
 
 			public void Izquierda() {
 				if( this.posicionX > 0 ) {
-				this.posicionX--; 
+				this.posicionX--;
+				this.contadorPasos++;
 				}	
 			
 	}
@@ -121,8 +142,6 @@ public class robot {
 		builder.append(posicionY);
 		builder.append(", hallegado=");
 		builder.append(hallegado);
-		builder.append(", pasos=");
-		builder.append(pasos);
 		builder.append("]");
 		return builder.toString();
 	}
@@ -140,7 +159,7 @@ public class robot {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		robot other = (robot) obj;
+		Robot other = (Robot) obj;
 		return posicionX == other.posicionX && posicionY == other.posicionY;
 	}
 

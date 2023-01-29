@@ -67,6 +67,7 @@ public class consumo {
 	public void setPreciogasolina(double preciogasolina) {
 		this.preciogasolina = preciogasolina;
 	} 
+	/*----------------*/
 	
 	
 	public double getTiempo () {
