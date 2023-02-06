@@ -9,7 +9,7 @@ public class test {
 		
 	
 		
-	Robot rb1 = new Robot (2,0); 
+	Robot rb1 = new Robot (2,1); 
 	
 
 	
@@ -18,10 +18,11 @@ public class test {
 	rb1.Abajo();
 	/*^^^^^^^*/
 	
-	for(int i=0 ; i<3;i++) {
+
 	rb1.Derrecha();	
 	rb1.Arriba();
-	}
+	
+
 	
 
 	
