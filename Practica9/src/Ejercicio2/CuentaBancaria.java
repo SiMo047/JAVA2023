@@ -1,5 +1,7 @@
 package Ejercicio2;
 
+import java.util.Objects;
+
 public class CuentaBancaria {
 
 	protected String numeroCuenta;
@@ -72,12 +74,53 @@ public class CuentaBancaria {
 		this.comisionesAnual = comisionesAnual;
 	}
 	
-	/*metodo generar numero cuenta bancaria */
+	/*to string */
 	
-	/*con este metodo generamos un numero de cuenta de forma alaetoria , utilizaremos el StringBuilder 
-	 *ya que es una cadena larga de numeros aleatorios y al final se convierte a String con el toString
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("CuentaBancaria [numeroCuenta=");
+		builder.append(numeroCuenta);
+		builder.append(", saldo=");
+		builder.append(saldo);
+		builder.append(", tieneTarjetaCredito=");
+		builder.append(tieneTarjetaCredito);
+		builder.append(", tieneTarjetaDebito=");
+		builder.append(tieneTarjetaDebito);
+		builder.append(", comisionesAnual=");
+		builder.append(comisionesAnual);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(numeroCuenta);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CuentaBancaria other = (CuentaBancaria) obj;
+		return Objects.equals(numeroCuenta, other.numeroCuenta);
+	}
+
+	
+	
+	/*metodo generar numero cuenta bancaria 
+	
+	con este metodo generamos un numero de cuenta de forma alaetoria , utilizaremos el StringBuilder 
+	ya que es una cadena larga de numeros aleatorios y al final se convierte a String con el toString
 	 */
 	
+
+
+
 	private String generaNumeroCuenta() {
 		StringBuilder sb = new StringBuilder (20); 
 		
@@ -88,7 +131,26 @@ public class CuentaBancaria {
 		return sb.toString(); 
 	}
 	
+	/*metodo ingresar que aumentara el saldo segun el valor que le indiques */
+	
+	public void ingresar(double cantidad ) {
+		if (cantidad >=0) {
+			this.saldo= this.saldo+cantidad ; 
+		}
+	}
 	
 	
+	/* metodo retirar este restara el saldo segun el valor que se le indique 
+	 * y comprueba si es posible hacer la retirada 
+	 */
+	
+	public boolean retirar(double cantidad ) {
+		if ((this.saldo-cantidad)>=0) {
+			this.saldo=this.saldo- cantidad ; 
+			return true ; 
+		}else {
+			return false ;
+		}
+	} 
 
 }
