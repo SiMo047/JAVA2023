@@ -115,7 +115,7 @@ public class CuentaBancaria {
 	/*metodo generar numero cuenta bancaria 
 	
 	con este metodo generamos un numero de cuenta de forma alaetoria , utilizaremos el StringBuilder 
-	ya que es una cadena larga de numeros aleatorios y al final se convierte a String con el toString
+	ya que es una cadena larga de numeros aleatorios y al final lo convertimos a String con el toString
 	 */
 	
 

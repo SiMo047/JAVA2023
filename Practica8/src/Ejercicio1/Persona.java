@@ -4,24 +4,41 @@ import java.util.Objects;
 
 public class Persona {
 
-	enum Sexo{M,H,O };
+	enum Sexo{M,H,O};
 	
-	private String nombre ; 
-	private int edad ; 
-	private String dni ; 
-	private int peso ; 
-	private int altura ;
-	private Sexo sexo ;
+	private String nombre ="" ; 
+	private int edad=0 ; 
+	private String dni="" ; 
+	private Sexo sexo= Sexo.H ;
+	private int peso =0; 
+	private int altura=0 ;
+	
 	
 	
 	
 	
 
 	/*constructores*/
-	
+
+	public Persona(String nombre, int edad, String dni, Sexo sexo ,int peso, int altura ) {
+		super();
+		this.nombre = nombre;
+		this.edad = edad;
+		this.dni = dni;
+		this.sexo = sexo;
+		this.peso = peso;
+		this.altura = altura;
+
+	}
 	
 	public Persona() {
 		super();
+		this.nombre = "Jose";
+		this.edad = 21;
+		this.dni = "75121957L";
+		this.sexo = Sexo.H;
+		this.peso=80 ; 
+		this.altura= 180 ; 
 	}
 
 
@@ -31,23 +48,25 @@ public class Persona {
 		this.edad = edad;
 		this.dni = dni;
 		this.sexo = sexo;
-		this.peso=0 ; 
-		this.altura= 0 ; 
+		this.peso=80 ; 
+		this.altura= 180 ; 
 	}
 
 
-	public Persona(String nombre, int edad, String dni, int peso, int altura, Sexo sexo) {
+
+	
+	public Persona(Persona otra) {
 		super();
-		this.nombre = nombre;
-		this.edad = edad;
-		this.dni = dni;
-		this.peso = peso;
-		this.altura = altura;
-		this.sexo = sexo;
+		this.nombre = otra.nombre;
+		this.edad = otra.edad;
+		this.dni = otra.dni;
+		this.sexo = otra.sexo;
+		this.peso=otra.peso ; 
+		this.altura=otra.altura ; 
 	}
 
 
-	/*metodos */
+	/*get y set */
 	
 	public String getNombre() {
 		return nombre;
@@ -109,7 +128,7 @@ public class Persona {
 	}
 
 	
-	
+	/* to string */
 
 	@Override
 	public String toString() {
@@ -130,7 +149,7 @@ public class Persona {
 		return builder.toString();
 	}
 
-
+/*equals*/
 	@Override
 	public int hashCode() {
 		return Objects.hash(dni);
