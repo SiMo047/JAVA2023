@@ -47,8 +47,25 @@ public class Partida {
 			return false ; 
 	}
 	
+public void turnoEnemigo() {
+	for (Enemigo e : this.enemigos) {
+		
+		if (e.getSalud()>0) {
+		   e.golpear(jugador);
+		   if(jugador.getSalud()<0) {
+			   return ; 
+		   }
+		   break;
+		}
+	}
+}
 
-	
+
+
+@Override
+public String toString() {
+	return "Partida [jugador=" + jugador + "]";
+}	
 	
 	
 	
