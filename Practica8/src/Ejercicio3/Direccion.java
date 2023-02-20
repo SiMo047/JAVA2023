@@ -155,13 +155,19 @@ public class Direccion {
 	public double distanciaKM(Direccion otro ) {
 		int radio = 6371;
 		
-		double Alat = otro.latitud-this.latitud;
-		double Along = otro.longitud-this.longitud;
+	
+		double lat2 =Math.toRadians(otro.latitud); 
+		double lat1 =Math.toRadians(this.latitud); 
+		double long2= Math.toRadians(otro.longitud); 
+		double long1 = Math.toRadians(this.longitud); 
 		
-		Math.toRadians(Alat);
-		Math.toRadians(Along);
 		
-		double a =Math.pow(Math.sin(Alat/2), 2)+Math.cos(Math.toRadians(this.latitud))*Math.cos(Math.toRadians(otro.latitud))
+		double Alat = lat2-lat1;
+		double Along = long2-long1;
+		
+		
+		
+		double a =Math.pow(Math.sin(Alat/2), 2)+Math.cos(lat1)*Math.cos(lat2)
 				*Math.pow(Math.sin(Along/2), 2);
 		
 		double c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
