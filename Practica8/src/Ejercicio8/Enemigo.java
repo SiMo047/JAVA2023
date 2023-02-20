@@ -38,13 +38,15 @@ public class Enemigo {
 	} 
 	
 	/*metodo que quitara vida al enemigo*/
-	public String quitarvida(int cant) {
+	public boolean quitarvida(int cant) {
 		if (this.salud-cant>0) {
 			this.salud=this.salud-cant;
+			
+			return true ; 
 		}else if (this.salud-cant<0) {
-			return "ENEMIGO MUERTO ";
+			return false ;
 		} 
-		return null;
+		return false;
 	}
 	
 	/*comprobar*/

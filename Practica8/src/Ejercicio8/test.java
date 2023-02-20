@@ -7,7 +7,7 @@ public class test {
 
 		
 		Arma a1 = new Arma ("Subfusil",40,10); 
-		Jugador j1 = new Jugador ("R","Gigante",200);
+		Jugador j1 = new Jugador ("R","Gigante",1000);
 		Enemigo e1 = new Enemigo ("Enemigo", "Mago", 250);
 		Partida p1 = new Partida (j1);
 		

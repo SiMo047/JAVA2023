@@ -19,10 +19,9 @@ public class Partida {
 	
 	public void iniciarPartida(Arma arma ) {
 		
-		Enemigo enem = new Enemigo ("Enemigo","Mago",100);
 		for (int i =0 ; i<=100;i++) {
-			Enemigo enemCopy = enem; 
-			enemigos.add(enemCopy);
+			
+			enemigos.add(new Enemigo ("Enemigo","Mago",50));
 		}
 		
 		this.jugador.setArma(arma);
@@ -47,17 +46,18 @@ public class Partida {
 			return false ; 
 	}
 	
-public void turnoEnemigo() {
+public boolean turnoEnemigo() {
 	for (Enemigo e : this.enemigos) {
 		
 		if (e.getSalud()>0) {
 		   e.golpear(jugador);
 		   if(jugador.getSalud()<0) {
-			   return ; 
+			   return true; 
 		   }
 		   break;
 		}
 	}
+	return false;
 }
 
 
