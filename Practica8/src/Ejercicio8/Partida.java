@@ -19,53 +19,67 @@ public class Partida {
 	
 	public void iniciarPartida(Arma arma ) {
 		
-		for (int i =0 ; i<=100;i++) {
+		for (int i =0 ; i<5;i++) {
 			
-			enemigos.add(new Enemigo ("Enemigo","Mago",50));
+			enemigos.add(new Enemigo ("Enemigo","Mago",5));
 		}
 		
-		this.jugador.setArma(arma);
+		this.jugador.equiparArma(arma);;
 	}
 	
 	public boolean turnoJugador () {
 	
-			for ( Enemigo e : this.enemigos) {
-					
-				if (enemigos.isEmpty()== true ) {
-					return true ;
-					} else {
-						
-						if (e.getSalud()<=0) {
-									/*eliminar el objeto del array */
-							enemigos.remove(e);
-						}else {
-							this.jugador.golpear(e);
-						}
-					}
-			}
+		/*el jugador golpeara al primer enemigo del array list */
+		this.jugador.golpear(this.enemigos.get(0));
+		
+		
+		/*Comprobamos si la salud es igual o menos que cero si es asi 
+		 * eliminamos el enemigo del array
+		 */
+		if ( this.enemigos.get(0).getSalud()<=0){
+			this.enemigos.remove(0); 
+		}
+		
+		/*si no hay mas enemigos en el array eso significa que el jugador ha 
+		 * ganado 
+		 */
+		if (this.enemigos.size()==0) {
+			return true ; 
+		}
 			return false ; 
 	}
 	
 public boolean turnoEnemigo() {
-	for (Enemigo e : this.enemigos) {
-		
-		if (e.getSalud()>0) {
-		   e.golpear(jugador);
-		   if(jugador.getSalud()<0) {
-			   return true; 
-		   }
-		   break;
-		}
+
+	/*comprobamos que haya enemigos en el array
+	 * si es asi que realice nada 
+	 */
+	if (this.jugador.getSalud()<=0) {
+		return true ;
+	}else {
+		this.enemigos.get(0).golpear(this.jugador);
+		return false ;
 	}
-	return false;
+	
+	
+	
 }
+
+
 
 
 
 @Override
 public String toString() {
-	return "Partida [jugador=" + jugador + "]";
-}	
+	StringBuilder builder = new StringBuilder();
+	builder.append("Partida [Jugador=");
+	builder.append(jugador.getSalud());
+	builder.append(" salud");
+	builder.append(" nº enemigos ");
+	builder.append(this.enemigos.size());
+	builder.append("]");
+	return builder.toString();
+}
 	
 	
 	

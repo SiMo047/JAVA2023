@@ -11,10 +11,14 @@ public class test {
 	public static void main(String[] args) {
 
 		
-		/*Scanner sc = new Scanner (System.in);
+		Agenda ag1 = new Agenda ();
+		Scanner sc = new Scanner (System.in);
 		
 		int opt=0 ; 
+		String nom ; 
+		int num  ;	
 		
+		do {
 		System.out.println("MENU--AGENDA");
 		System.out.println("------------");
 		
@@ -27,37 +31,63 @@ public class test {
 		System.out.println("5.Estado de la agenda");
 		System.out.println("6.Salir");
 		
-	*/
+		opt = sc.nextInt();
+		
+		
+		switch (opt) {
+		case 1: {
+			
+			System.out.println("Cuantos contactos quieres añadir ");
+			int nuum=sc.nextInt();
+			
+			for (int i=1;i<=nuum;i++) {
+				System.out.println("Introduce el nombre del "+i+"º contacto ");
+				nom= sc.next();
+				System.out.println("Introduce el numero del contacto ");
+				num = sc.nextInt();
+
+				Contacto c = new Contacto (nom,num);
+				ag1.addContacto(c);
+			}
+			
+		 break;
+			}
+		case 2:{
+			System.out.println(ag1.listarContactos());
+			break;
+		}
+		case 3:{
+			System.out.println("Introduce el contaco a buscar");
+			nom=sc.next();
+			System.out.println(ag1.buscarContacto(nom));
+			break;
+		}
+		case 4:{
+			System.out.println("Introduce el nombre del contacto a eliminar");
+			nom=sc.next();
+			ag1.eliminarContacto(nom);
+			break;
+		}
+		case 5:{
+			System.out.println(ag1.listarContactos());
+			break; 
+		}
+		case 6:{
+			System.out.println("Cerrando Agenda");break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + opt);
+		}
+	
+		}while (opt<6);
 	
 		
-		Agenda ag1 = new Agenda ();
-		
-		Contacto c1 = new Contacto (); 
-		Contacto c2 = new Contacto ("Jose",635121314); 
-		Contacto c3 = new Contacto ("Rafa",635155314); 
-		Contacto c4 = new Contacto ("Celia",63214778);
-		Contacto c5 = new Contacto ("Jose Empresa",950121230);
-		
-	 
+	
 		
 		
-		 
-		ag1.addContacto(c1);
-		ag1.addContacto(c2);
-		ag1.addContacto(c3);
-		ag1.addContacto(c4);
-		ag1.addContacto(c5);
+	
 		
 		
-		System.out.println(ag1.listarContactos());
-		
-		System.out.println(ag1.buscarContacto("Jose"));
-		
-		System.out.println(ag1.existeContacto(c5));
-		
-		
-		System.out.println(ag1.eliminarContacto(c5));
-		System.out.println(ag1.listarContactos());
 		 
 		
 		

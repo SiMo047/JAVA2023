@@ -71,16 +71,27 @@ public class Jugador {
 	
 	
 	/*comprobar */
-	public void golpear(Enemigo enem) {
+	public boolean golpear(Enemigo enem) {
 		
-		
-		if (this.arma==null || arma.getBalas()==0) {
-			enem.setSalud(enem.getSalud()-20);
+		if (this.arma==null) {
+			return enem.quitarvida(20);
 		}else {
-			enem.setSalud(enem.getSalud()-arma.getDaño());
-			arma.setBalas(arma.getBalas()-1);
+			if (this.arma.getBalas()>0) {
+			
+				this.arma.setBalas(this.arma.getBalas()-1);
+				
+				return enem.quitarvida(this.arma.getDaño()); 
+			}else {
+				return enem.quitarvida(20); 
+			}
 			
 		}
+		
+		
+		
+		
+		
+	
 	}
 	
 	

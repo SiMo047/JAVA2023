@@ -66,17 +66,14 @@ public class Agenda {
 	}
 	
 	
-	public String eliminarContacto ( Contacto obj) {
+	public void eliminarContacto (String nom) {
 	
+		Contacto copia = new Contacto (nom,0000);
 		
-		if ( agenda.indexOf(obj)>=0) {
-		
-				agenda.remove(obj); 
-				
-				return "Contacto Eliminado";
-		}
-		return null;
-		
+		int posicion= agenda.indexOf(copia);
+
+		agenda.remove(posicion);
+	
 	}
 	
 		

@@ -11,7 +11,7 @@ public class test {
 		
 		Scanner sc = new Scanner (System.in); 
 		
-		
+	
 		
 		System.out.println("Calculo de IMC");
 		System.out.println("Introudce los siguientes datos  ");

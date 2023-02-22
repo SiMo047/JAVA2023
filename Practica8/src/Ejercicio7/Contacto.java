@@ -49,12 +49,16 @@ public class Contacto {
 		return "Contacto [nombre=" + nombre + ", numero=" + numero + "]";
 	}
 
+
+
+	/*equals*/
+
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(numero);
+		return Objects.hash(nombre);
 	}
-	
-	/*equals*/
 
 	@Override
 	public boolean equals(Object obj) {
@@ -65,10 +69,8 @@ public class Contacto {
 		if (getClass() != obj.getClass())
 			return false;
 		Contacto other = (Contacto) obj;
-		return numero == other.numero;
+		return Objects.equals(nombre, other.nombre);
 	}
-	
-	
 	
 	
 
