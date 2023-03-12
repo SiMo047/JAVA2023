@@ -1,6 +1,6 @@
 package Ejercicio3;
 
-public class Serie {
+public class Serie implements Entregable  {
 
 	private String titulo ; 
 	private int numeroDetemporadas ;
@@ -95,7 +95,30 @@ public class Serie {
 	public String toString() {
 		return "Serie [titulo=" + titulo + ", numeroDetemporadas=" + numeroDetemporadas + ", genero=" + genero
 				+ ", creador=" + creador + ", prestado=" + prestado + "]";
-	} 
+	}
+
+
+	@Override
+	public void entregar() {
+		this.prestado = true;
+		
+	}
+	
+	
+
+	@Override
+	public void devolver() {
+		
+		this.prestado = false;
+		
+	}
+	
+
+	@Override
+	public boolean isPrestado() {		
+		
+		return this.prestado;
+	}
 	
 	
 	
