@@ -18,6 +18,7 @@ public class PlazaAparcamiento {
 	public PlazaAparcamiento(int numeroDeplaza) {
 		super();
 		this.numeroDeplaza = numeroDeplaza;
+		this.libre= true ;
 	}
 
 
