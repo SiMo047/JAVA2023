@@ -3,7 +3,7 @@ package Setordenacion;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-public class PersonajeTS {
+public class PersonajeTS implements Comparable <TipoArmadura> {
 
 	
 	private String nombre ; 
@@ -83,6 +83,14 @@ public class PersonajeTS {
 
 	public void setArmaI(Arma armaI) {
 		this.armaI = armaI;
+	}
+
+
+
+	@Override
+	public int compareTo(TipoArmadura o) {
+	
+		return 0; 
 	}
 	
 	

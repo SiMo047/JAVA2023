@@ -4,16 +4,16 @@ import java.util.Objects;
 
 public class TipoArmadura {
 
-	
+	enum Zona {CABEZA, BRAZOIZQ, BRAZODER, TORSO, PIERNAIZQ, PIERNADER};
 	
 	private String nombre ; 
-	private  String zona ; 
+	private  Zona zona ; 
 	private int defensaFisica ; 
 	private int defensaMagica ;
 	
 	
 	
-	public TipoArmadura(String nombre, String zona, int defensaFisica, int defensaMagica) {
+	public TipoArmadura(String nombre, Zona zona, int defensaFisica, int defensaMagica) {
 		super();
 		this.nombre = nombre;
 		this.zona = zona;
@@ -35,13 +35,13 @@ public class TipoArmadura {
 
 
 
-	public String getZona() {
+	public 	Zona getZona() {
 		return zona;
 	}
 
 
 
-	public void setZona(String zona) {
+	public void setZona(Zona zona) {
 		this.zona = zona;
 	}
 

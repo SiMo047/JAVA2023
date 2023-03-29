@@ -150,9 +150,8 @@ public class PersonajeAL {
 		StringBuffer sb = new StringBuffer();
 		for (TipoArmadura a :this.armadura) {
 			
-			sb.append("Nombre ="); 
-			sb.append(a.getNombre()); 
-			sb.append(", DefensaFisica ="); 
+		
+			sb.append("DefensaFisica ="); 
 			sb.append(a.getDefensaFisica()); 
 			sb.append("\n");
 		}
@@ -165,10 +164,8 @@ public class PersonajeAL {
 		
 		StringBuffer sb = new StringBuffer();
 		for (TipoArmadura a :this.armadura) {
-			
-			sb.append("Nombre ="); 
-			sb.append(a.getNombre()); 
-			sb.append(", DefensaMagica ="); 
+	 
+			sb.append(" DefensaMagica ="); 
 			sb.append(a.getDefensaMagica()); 
 			sb.append("\n");
 		
@@ -183,10 +180,8 @@ public class PersonajeAL {
 		
 		StringBuffer sb = new StringBuffer();
 		for (TipoArmadura a :this.armadura) {
-			
-			sb.append("Nombre ="); 
-			sb.append(a.getNombre()); 
-			sb.append(", Zona="); 
+		
+			sb.append(" Zona="); 
 			sb.append(a.getZona()); 
 			sb.append("\n");
 		

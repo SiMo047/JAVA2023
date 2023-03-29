@@ -4,15 +4,17 @@ import java.util.Objects;
 
 public class Arma {
 
+	enum Tipo {ESPADA,HACHA, MAZO, BASTON, BARITA, ARCO, DAGA};
+	
 	private String nombre; 
-	private String tipo ; 
+	private Tipo tipo ; 
 	private boolean esMagico ; 
 	private int danoFisico ; 
 	private int danoMagico ;
 	
 	
 	
-	public Arma(String nombre, String tipo, boolean esMagico, int danoFisico, int danoMagico) {
+	public Arma(String nombre, Tipo tipo, boolean esMagico, int danoFisico, int danoMagico) {
 		super();
 		this.nombre = nombre;
 		this.tipo = tipo;
@@ -35,13 +37,13 @@ public class Arma {
 
 
 
-	public String getTipo() {
+	public Tipo getTipo() {
 		return tipo;
 	}
 
 
 
-	public void setTipo(String tipo) {
+	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
 
