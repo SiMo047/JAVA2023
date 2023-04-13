@@ -158,7 +158,10 @@ public class Publicacion implements Comparable<Publicacion> , Prestable {
 		return sb.toString();
 			
 		}
-	}
+	
+
+
+}
 	
 	
 	
