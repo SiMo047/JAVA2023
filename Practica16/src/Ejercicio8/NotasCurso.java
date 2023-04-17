@@ -125,17 +125,17 @@ public class NotasCurso {
 	
 	
 	
-	
+	/*añade una nota que la compone una asignatura y la nota corespondiente */
 	public void addNota (String asignatura , Double nota ) {
 		this.notas.put(asignatura, nota);
 	}
 	
-	
+	/*borra la nota pasandole la nota que es la clave*/
 	public void deleteNota (String asignatura) {
 		this.notas.remove(asignatura);
 	}
 	
-	
+	/*devuelve la nota de la asignatura que le hayas pasado */
 	public Double buscarNota(String asignatura ) {
 		return (Double) this.notas.get(asignatura);
 	}

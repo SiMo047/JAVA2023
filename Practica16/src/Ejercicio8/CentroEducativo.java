@@ -127,17 +127,18 @@ public class CentroEducativo {
 		this.expedientes.add(e);
 	}
 	
-	public String buscarExpediente ( String dni ) {
+	public Expediente  buscarExpediente ( String dni ) {
 		
-		StringBuffer sb = new StringBuffer ();
+		
 		for (Expediente e : this.expedientes) {
 			if (e.getEstudiante().getDni().equals(dni)) {
-				sb.append(e) ;
+			
+				return e;
 			}
 		}
 		
 		
-		return sb.toString() ; 
+		return null; 
 		
 		
 	}

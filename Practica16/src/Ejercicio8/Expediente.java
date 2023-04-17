@@ -8,7 +8,7 @@ import java.util.TreeSet;
 import Ejercicio8.NotasCurso.Curso;
 import Ejercicio8.NotasCurso.EtapaEducativa;
 
-public class Expediente {
+public class Expediente implements Comparable <Expediente > {
 
 	
 	private Estudiante estudiante ; 
@@ -57,6 +57,19 @@ public class Expediente {
 		builder.append(", activo=");
 		builder.append(activo);
 		builder.append("]");
+		builder.append("\n"); 
+		for (NotasCurso nc : this.notas) {
+			builder.append("Nombre del Ciclo :");
+			builder.append(nc.getNombreCiclo()); 
+			builder.append(", Etapa Educativa");
+			builder.append(nc.getEe());
+			builder.append(", Curso :");
+			builder.append(nc.getCurso());
+			builder.append("\n");
+			
+			builder.append(nc.pintar());
+			builder.append("\n");
+			}
 		return builder.toString();
 	}
 
@@ -107,6 +120,13 @@ public class Expediente {
 		
 		return sb.toString();
 		
+	}
+
+
+	@Override
+	public int compareTo(Expediente o) {
+
+		return this.getEstudiante().getDni().compareTo(o.getEstudiante().getDni());
 	}
 
 	
