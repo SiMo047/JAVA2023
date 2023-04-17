@@ -16,13 +16,13 @@ public class Estudiante {
 	private Integer tlf ;
 
 	
-	public Estudiante(String dni, String nombre, String apellido, LocalDate fnacimiento, String direccion,
+	public Estudiante(String dni, String nombre, String apellido, CharSequence fnacimiento, String direccion,
 			String localidad, String email, Integer tlf) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.fnacimiento = fnacimiento;
+		this.fnacimiento =LocalDate.parse(fnacimiento) ;
 		this.direccion = direccion;
 		this.localidad = localidad;
 		this.email = email;

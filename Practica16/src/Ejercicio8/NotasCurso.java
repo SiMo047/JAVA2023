@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class NotasCurso {
 
 
-	enum EtapaEducativa {ESO, Bachillerato, FPBásica, FPMedio, FPSuperior};
+	enum EtapaEducativa {ESO, Bachillerato, FPBasica, FPMedio, FPSuperior};
 	enum Curso {n1,n2,n3,n4};
 	
 	
@@ -16,7 +16,7 @@ public class NotasCurso {
 	private EtapaEducativa ee ; 
 	private String nombreCiclo ;
 	private Curso curso ; 
-	private HashMap notas ; 
+	private HashMap <String , Double >notas ; 
 	private Integer anio ;
 
 	
@@ -27,7 +27,7 @@ public class NotasCurso {
 		this.nombreCiclo = nombreCiclo;
 		this.curso = curso;
 		this.anio = anio;
-		this.notas= new HashMap<String , Double >();
+		this.notas= new HashMap<>();
 	}
 
 

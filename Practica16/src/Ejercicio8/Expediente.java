@@ -5,13 +5,14 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
+import Ejercicio8.NotasCurso.Curso;
 import Ejercicio8.NotasCurso.EtapaEducativa;
 
 public class Expediente {
 
 	
 	private Estudiante estudiante ; 
-	private HashSet notas ; 
+	private HashSet<NotasCurso> notas ; 
 	private boolean activo ;
 	
 	
@@ -19,7 +20,7 @@ public class Expediente {
 		super();
 		this.estudiante = estudiante;
 		this.activo = activo;
-		this.notas= new HashSet <NotasCurso>();
+		this.notas= new HashSet <>();
 	}
 
 
@@ -87,6 +88,26 @@ public class Expediente {
 	}
 	
 	
+	public String mostrarNotas (Curso curso , EtapaEducativa e) {
+		
+		StringBuffer sb = new StringBuffer ();
+		
+		for ( NotasCurso nc : this.notas) {
+			if ((nc.getCurso()==curso) && (nc.getEe()==e) ) {
+				sb.append("NOTAS");
+				sb.append("\n");
+				sb.append(nc.pintar());
+			}else {
+				sb.append("No se han encontrado notas "); 
+			}
+		}
+		
+		
+		
+		
+		return sb.toString();
+		
+	}
 
 	
 	

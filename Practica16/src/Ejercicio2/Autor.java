@@ -66,7 +66,7 @@ public class Autor implements Comparable <Autor>{
 		return builder.toString();
 	}
 
-	public void aÃ±adirPublicacion(Publicacion p ) {
+	public void añadirPublicacion(Publicacion p ) {
 		int posicion = this.publicaciones.indexOf(p); 
 		
 		if (posicion<0) {
