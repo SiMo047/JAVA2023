@@ -96,5 +96,40 @@ public class Stim {
 	
 	
 	
+public Puntuacion buscarPuntuacion (Juego j , Usuario u ) {
+	
+	int pu = this.jugadores.indexOf(u);
+	
+	if (pu>=0) {
+		int pj = this.juegos.indexOf(j);
+		if (pj>=0) {
+			return this.jugadores.get(pu).getPuntuacion(this.juegos.get(pj));
+		
+		
+	}
+	
+	
+	}
+		
+	return null ; 
 	
 }
+
+
+/*******METODOS STREAMS*******/
+
+public void pintarUsuarioporNick() {
+	
+	this.jugadores.stream()
+	.sorted((u1,u2)-> u1.getNick().compareTo(u2.getNick()))
+	.map(u -> u.getNick()+ " - "+u.getEmail())
+	.forEach(System.out::println);
+	
+}
+
+
+}
+	
+	
+	
+	
