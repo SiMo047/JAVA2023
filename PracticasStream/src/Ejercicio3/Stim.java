@@ -2,6 +2,7 @@ package Ejercicio3;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Stim {
@@ -118,6 +119,7 @@ public Puntuacion buscarPuntuacion (Juego j , Usuario u ) {
 
 /*******METODOS STREAMS*******/
 
+/*metodo que pinta cada usuario con su respectivo nick y email */
 public void pintarUsuarioporNick() {
 	
 	this.jugadores.stream()
@@ -128,8 +130,34 @@ public void pintarUsuarioporNick() {
 }
 
 
+/*metodo que pinta por cada usuario sus juegos y sus puntuaciones*/
+
+public void pintarPuntuacion() {
+	
+	this.jugadores.stream()
+	.forEach(
+			j-> {
+				System.out.println(j.getNick());
+				Set <Juego> juegosDenick= j.getPuntuaciones().keySet(); 
+				juegosDenick.stream()
+			
+				.forEach(
+				ju -> {
+					System.out.println(ju.getNombre()+""+j.getPuntuacion(ju)) ;
+				
+				});	
+	
+	});
+	
 }
+
+
+
+}
+
+
 	
 	
-	
+
+
 	
