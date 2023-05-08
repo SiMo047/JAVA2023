@@ -69,6 +69,16 @@ public class Director {
 		return Objects.equals(id, other.id);
 	}
 	
+	/*metodo que añade pelicula al array de peliculas */
+	public void addPelicula (Pelicula p) {
+		if (this.peliculas.indexOf(p)<0) {
+		this.peliculas.add(p);
+		}
+	}
 	
+	/*metodo que elimina una pelicula del array */
+	public void deletePelicula  (Pelicula p) {
+		this.peliculas.remove(p);
+	}
 	
 }

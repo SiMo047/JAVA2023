@@ -88,9 +88,45 @@ public class Pelicula {
 		return Objects.equals(id, other.id);
 	}
 	
+	/*metodo que añade genero al array (Genero)*/
+	public void addGenero (Genero g) {
+		if (this.generos.indexOf(g)<0) {
+		this.generos.add(g);
+		}
+	}
+	/*metodo que elimina el genero del array*/
+	 public void deleteGenero(Genero g) {
+	        this.generos.remove(g);
+	    }
 	
-	
-	
-	
+	 
+	/*metodo que añade director al array */
+	  public void addDirector(Director d) {
+			if (this.generos.indexOf(d)<0) { 
+		  this.directores.add(d);
+			}
+	    }
+/*metodo que elimia director del array*/
+	    public void deleteDirector(Director d) {
+	        this.directores.remove(d);
+	    }
+	   
+	  
+	   
+	   /*metodo que añade una director y un genero a los arrays */
+	    
+	    public void addPyG(Director d , Genero g) {
+	    	
+	    	if (this.generos.indexOf(d)<0) { 
+	  		  this.directores.add(d);
+	  			}
+	    	
+	    	if (this.generos.indexOf(g)<0) {
+	    		this.generos.add(g);
+	    		}
+	    }
+	    
+
+	    
 	
 }

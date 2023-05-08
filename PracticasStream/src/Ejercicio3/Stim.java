@@ -121,12 +121,20 @@ public Puntuacion buscarPuntuacion (Juego j , Usuario u ) {
 public void pintarUsuarioporNick() {
 	
 	this.jugadores.stream()
-	.sorted((u1,u2)-> u1.getNick().compareTo(u2.getNick()))
-	.map(u -> u.getNick()+ " - "+u.getEmail())
+	.sorted((ju1,ju2)-> ju1.getNick().compareTo(ju2.getNick()))
+	.map(ju -> ju.getNick()+ " - "+ju.getEmail())
 	.forEach(System.out::println);
 	
 }
 
+public void pintarUsuarioPuntuacin () {
+	
+	this.jugadores.stream()
+	.forEach(
+			ju -> ju.getNick() 
+			);
+	
+}
 
 }
 	
