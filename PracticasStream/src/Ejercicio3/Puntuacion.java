@@ -1,5 +1,7 @@
 package Ejercicio3;
 
+import java.util.Objects;
+
 public class Puntuacion {
 
 	
@@ -26,6 +28,9 @@ public class Puntuacion {
 	public Integer getPuntos() {
 		return puntos;
 	}
+
+
+
 
 
 
@@ -69,6 +74,28 @@ public class Puntuacion {
 		this.partidasPerdidas = partidasPerdidas;
 	}
 
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(puntos);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Puntuacion other = (Puntuacion) obj;
+		return Objects.equals(puntos, other.puntos);
+	}
+
+	
+	
 
 
 	@Override

@@ -68,10 +68,10 @@ public class testStim {
 	System.out.println(st.buscarPuntuacion(j2, u5));
 
 	
-	TreeSet <Puntuacion>ts = st.obtPuntuaciones(j5);
-	for (Puntuacion p : ts) {
-		System.out.println(p);
-	}
+	
+	
+	st.pintarUsuarioporNick();
+	st.pintarPuntuacion();
 	
 	
 	}
