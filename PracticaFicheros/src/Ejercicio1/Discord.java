@@ -28,7 +28,7 @@ public class Discord {
 
 
 
-
+/*Metodo que le un archivo tipo .txt y apartir de ahi devuelve una lista de obj Gamer */
 
 	public static List<Gamer> loadGamers() {
 		
@@ -65,6 +65,47 @@ public class Discord {
 	return gamers;
 		
 	}
+	
+	/*Metodo que añade un Gamer a la coleccion */
+	public void addGamer (Gamer g ) {
+		this.gamers.add(g);
+	}
+	/*Metodo que elimina un Gamer de la coleccion */
+	public void removeGamer ( Gamer g) {
+		this.gamers.remove(g); 
+	}
+	
+	/*devuelve un obj Gamer segun en el nick que le pases */
+	public Gamer findGamer (String nick) {
+		
+		return this.gamers.stream()
+			.filter(g -> g.getNick().equals(nick))
+			.findFirst()
+			.orElseGet(null);
+		
+	}
+	
+	/*metodo que muetra todos los gamers con su informacion */
+	public List <Gamer> listGamers(){
+		
+		List<Gamer>gamers ; 
+		
+		gamers=this.gamers.stream()
+		.collect(Collectors.toList());
+		
+		return gamers;
+	}
+	
+	
+	public static void saveGamers() {
+		
+		/*leer fichero */
+		Path fichero = Paths.get("src/Ejercicio1/gamers");
+		
+		
+		
+	}
+	
 	
 	
 }
