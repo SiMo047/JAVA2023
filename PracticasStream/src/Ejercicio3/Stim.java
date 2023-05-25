@@ -1,7 +1,10 @@
 package Ejercicio3;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Stim {
@@ -80,14 +83,15 @@ public class Stim {
 	
 	
 	
-	public TreeSet <Puntuacion> obtPuntuaciones (Juego j ){
+	public TreeMap<Puntuacion, Usuario> obtPuntuaciones (Juego j ){
 		
-		TreeSet <Puntuacion>punt = new TreeSet<>();
+		TreeMap <Puntuacion,Usuario>punt = new TreeMap<>();
 	
 		for (Usuario u : this.jugadores) {
 				Puntuacion p =u.getPuntuacion(j); 
-				punt.add(p);
-				
+			if (p!=null) {
+				punt.put(p, u);
+			}	
 		}
 		
 		return punt;
@@ -116,8 +120,28 @@ public Puntuacion buscarPuntuacion (Juego j , Usuario u ) {
 }
 
 
+
+public void pintarRankingjuego() {
+	
+	for ( Juego j : this.juegos) {
+		
+		System.out.println(j.getNombre());
+		
+		TreeMap <Puntuacion,Usuario> pu = this.obtPuntuaciones(j);
+		Set <Puntuacion> puntos= pu.keySet();
+		
+		for (Puntuacion p: puntos ) {
+			System.out.println(pu.get(p).getNick()+ " Puntos= "+p.getPuntos());
+		}
+		
+		
+	}
+}
+
+
 /*******METODOS STREAMS*******/
 
+/*metodo que pinta cada usuario con su respectivo nick y email */
 public void pintarUsuarioporNick() {
 	
 	this.jugadores.stream()
@@ -136,8 +160,34 @@ public void pintarUsuarioPuntuacin () {
 	
 }
 
+/*metodo que pinta por cada usuario sus juegos y sus puntuaciones*/
+
+public void pintarPuntuacion() {
+	
+	this.jugadores.stream()
+	.forEach(
+			j-> {
+				System.out.println(j.getNick());
+				Set <Juego> juegosDenick= j.getPuntuaciones().keySet(); 
+				juegosDenick.stream()
+			
+				.forEach(
+				ju -> {
+					System.out.println(ju.getNombre()+"  "+j.getPuntuacion(ju)) ;
+				
+				});	
+	
+	});
+	
 }
+
+
+
+}
+
+
 	
 	
-	
+
+
 	
